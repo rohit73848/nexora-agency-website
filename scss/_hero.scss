@@ -1,0 +1,83 @@
+.hero {
+  min-height: 100vh;
+  @include flex-center;
+  padding: 0 5%;
+  padding-top: $nav-height;
+
+  &__content {
+    max-width: 700px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: $color-purple;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    span {
+      color: $color-purple;
+    }
+  }
+
+  &__desc {
+    color: $text-muted;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  &__btns {
+    @include flex-center;
+    gap: 1.5rem;
+
+    .btn {
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      @include transition;
+    }
+
+    .btn--primary {
+      background-color: $color-purple;
+      color: $text-white;
+
+      &:hover {
+        background-color: $color-pink;
+      }
+    }
+
+    .btn--outline {
+      background-color: transparent;
+      border: 2px solid $color-purple;
+      color: $text-white;
+
+      &:hover {
+        background-color: $color-purple;
+      }
+    }
+  }
+
+  @include mobile {
+    &__title {
+      font-size: 2.2rem;
+    }
+    &__btns {
+      flex-direction: column;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

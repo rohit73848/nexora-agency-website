@@ -1,6 +1,6 @@
 let hamburger = document.querySelector(".navbar__hamburger");
 let navLinks = document.querySelector(".navbar__links");
-let navabr = document.querySelector(".navabr");
+let navabr = document.querySelector(".navbar");
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
