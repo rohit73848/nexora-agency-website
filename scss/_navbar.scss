@@ -1,0 +1,96 @@
+.navbar {
+  @include flex-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $nav-height;
+  padding: 0 5%;
+  background-color: transparent;
+  @include transition(background-color);
+  z-index: 1000;
+
+  &__logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $color-purple;
+  }
+  &.scrolled {
+    background-color: $bg-secondary;
+  }
+  &__links {
+    @include flex-center;
+    gap: 2rem;
+    list-style: none;
+
+    a {
+      color: $text-white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      position: relative;
+      @include transition(color);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: $color-purple;
+        @include transition(width);
+      }
+      &:hover {
+        color: $color-purple;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__btn {
+    background-color: $color-purple;
+    color: $text-white;
+    padding: 0.5rem 1.4rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    @include transition(background-color);
+    &:hover {
+      background-color: $color-pink;
+    }
+  }
+  &__hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: $text-white;
+  }
+  @include mobile {
+    &__links {
+      // display: none;
+      flex-direction: column;
+      position: absolute;
+      top: $nav-height;
+      left: -100%;
+      opacity: 0;
+      width: 100%;
+      background-color: $bg-secondary;
+      padding: 1.5rem 0;
+      gap: 1.5rem;
+      text-align: center;
+      @include transition(all, 0.5s);
+    }
+    &__links.open {
+      display: flex;
+      opacity: 1;
+      left: 0;
+    }
+    &__btn {
+      display: none;
+    }
+    &__hamburger {
+      display: block;
+    }
+  }
+}

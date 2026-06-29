@@ -1,0 +1,23 @@
+// Flexbox center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flexbox space between
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+// Responsive breakpoint
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+// Smooth transition
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease;
+}
